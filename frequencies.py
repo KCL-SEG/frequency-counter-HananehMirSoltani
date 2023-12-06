@@ -5,15 +5,15 @@ from typing import ItemsView
 
 
 def frequencies(items):
-    frequencies = {}
+    frequency_dict = {}
     for item in items:
-        if item in frequencies:
-            frequencies[item] += 1
+        # Convert the item to a string
+        key = str(item)
+        # Increase the count for this key in the dictionary
+        if key in frequency_dict:
+            frequency_dict[key] += 1
         else:
-            frequencies[item] = 1
-    return frequencies
-items=['a','b','c','b','a','c','a','c','b','a','c']
-result = frequencies(items)
+            frequency_dict[key] = 1
+    return frequency_dict
 
-print("Frequency of items:", result)
 
